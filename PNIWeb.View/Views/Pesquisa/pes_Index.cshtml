@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PNIWeb.Model.Models.TbPesquisa>
+
+@{
+    ViewData["Title"] = "Pesquisa";
+}
+
+<h1>Pesquisa</h1>
+
+<p>
+    <a asp-action="pes_Adicionar">Adicionar Pesquisa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PqEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PqSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PqNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PqTitulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PqInstituicao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PqFk)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PqEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PqSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PqNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PqTitulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PqInstituicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PqFk)
+            </td>
+            <td>
+                <a asp-action="pes_Alterar" asp-route-id="@item.PqId">Alterar</a> |
+                <a asp-action="Details" asp-route-id="@item.PqId">Details</a> |
+                <a asp-action="pes_Deletar" asp-route-id="@item.PqId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

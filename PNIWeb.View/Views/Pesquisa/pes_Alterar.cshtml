@@ -1,0 +1,59 @@
+﻿@model PNIWeb.Model.Models.TbPesquisa
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<h1>Alterar</h1>
+
+<h4>Pesquisa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="pes_Alterar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PqId" />
+            <div class="form-group">
+                <label asp-for="PqEntrada" class="control-label"></label>
+                <input asp-for="PqEntrada" class="form-control" />
+                <span asp-validation-for="PqEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PqSaida" class="control-label"></label>
+                <input asp-for="PqSaida" class="form-control" />
+                <span asp-validation-for="PqSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PqNome" class="control-label"></label>
+                <input asp-for="PqNome" class="form-control" />
+                <span asp-validation-for="PqNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PqTitulo" class="control-label"></label>
+                <input asp-for="PqTitulo" class="form-control" />
+                <span asp-validation-for="PqTitulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PqInstituicao" class="control-label"></label>
+                <input asp-for="PqInstituicao" class="form-control" />
+                <span asp-validation-for="PqInstituicao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PqFk" class="control-label"></label>
+                <input asp-for="PqFk" class="form-control" />
+                <span asp-validation-for="PqFk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="pes_Index">Retronar para Lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
